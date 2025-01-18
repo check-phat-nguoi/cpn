@@ -12,7 +12,12 @@ cpn-cli = { workspace = true }
 cpn-docs = { workspace = true }
 
 [tool.uv.workspace]
-members = ["packages/cli", "packages/core", "packages/docs"]
+members = [
+  "packages/cli",
+  "packages/core",
+  "packages/docs",
+  "packages/telegram-bot",
+]
 
 [dependency-groups]
 dev = ["pre-commit>=4.0.1"]

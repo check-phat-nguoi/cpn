@@ -1,7 +1,7 @@
 default: restore-env
 
 restore-env:
-  uv sync --all-extras --all-groups --frozen && just restore-env-core && just restore-env-cli && just restore-env-docs
+  uv sync --all-extras --all-groups --frozen && uv run pre-commit install && just restore-env-core && just restore-env-cli && just restore-env-docs
 
 [working-directory: 'packages/core']
 restore-env-core:
