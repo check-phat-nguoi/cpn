@@ -371,13 +371,13 @@ name = "cpn-telegram-bot"
 version = "0.1.0"
 source = { virtual = "packages/telegram-bot" }
 dependencies = [
-    { name = "cpn-cli" },
+    { name = "cpn-core" },
     { name = "python-telegram-bot" },
 ]
 
 [package.metadata]
 requires-dist = [
-    { name = "cpn-cli", editable = "packages/cli" },
+    { name = "cpn-core", editable = "packages/core" },
     { name = "python-telegram-bot", specifier = ">=21.10" },
 ]
 
