@@ -1,0 +1,18 @@
+[project]
+name = "cpn"
+version = "0.0.0.dev"
+description = "cpn monorepo"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
+
+[tool.uv.sources]
+cpn-core = { workspace = true }
+cpn-cli = { workspace = true }
+cpn-docs = { workspace = true }
+
+[tool.uv.workspace]
+members = ["packages/cli", "packages/core", "packages/docs"]
+
+[dependency-groups]
+dev = ["pre-commit>=4.0.1"]

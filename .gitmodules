@@ -1,0 +1,9 @@
+[submodule "packages/core"]
+	path = packages/core
+	url = git@github.com:check-phat-nguoi/cpn-core.git
+[submodule "packages/cli"]
+	path = packages/cli
+	url = git@github.com:check-phat-nguoi/cpn-cli.git
+[submodule "packages/docs"]
+	path = packages/docs
+	url = git@github.com:check-phat-nguoi/check-phat-nguoi.github.io.git
