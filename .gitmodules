@@ -7,3 +7,6 @@
 [submodule "packages/docs"]
 	path = packages/docs
 	url = git@github.com:check-phat-nguoi/check-phat-nguoi.github.io.git
+[submodule "packages/telegram-bot"]
+	path = packages/telegram-bot
+	url = git@github.com:check-phat-nguoi/cpn-telegram-bot.git
