@@ -30,6 +30,9 @@ jobs:
           cache-dependency-path: |
             pyproject.toml
 
+      - name: Update submodules
+        run: git submodule update --recursive
+
       - name: Export lock file
         run: uv lock --no-upgrade --no-binary --no-build
 
