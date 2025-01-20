@@ -33,6 +33,21 @@ jobs:
       - name: Export lock file
         run: uv lock --no-upgrade --no-binary --no-build
 
+      # https://github.com/actions/create-github-app-token#configure-git-cli-for-an-apps-bot-user
+      - uses: actions/create-github-app-token@v1
+        id: app-token
+        with:
+          app-id: ${{ vars.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+
+      - name: Get GitHub App User ID
+        id: get-user-id
+        run: echo "user-id=$(gh api "/users/${{ steps.app-token.outputs.app-slug }}[bot]" --jq .id)" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: 'chore: sync dev env'
+          commit_message: 'chore: sync dev env [skip ci]'
+          commit_user_name: '${{ steps.app-token.outputs.app-slug }}[bot]'
+          commit_user_email: '${{ steps.get-user-id.outputs.user-id }}+${{ steps.app-token.outputs.app-slug }}[bot]@users.noreply.github.com'
