@@ -7,7 +7,7 @@ on:
 
 jobs:
   sync:
-    name: Sync dev env
+    name: Auto sync
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -31,7 +31,7 @@ jobs:
             pyproject.toml
 
       - name: Update submodules
-        run: git submodule update --recursive
+        run: git submodule update --recursive --remote
 
       - name: Export lock file
         run: uv lock --no-upgrade --no-binary --no-build
