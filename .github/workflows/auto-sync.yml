@@ -34,7 +34,7 @@ jobs:
         run: git submodule update --recursive --remote
 
       - name: Export lock file
-        run: uv lock --no-upgrade --no-binary --no-build
+        run: uv lock --no-cache
 
       # https://github.com/actions/create-github-app-token#configure-git-cli-for-an-apps-bot-user
       - uses: actions/create-github-app-token@v1
