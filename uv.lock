@@ -358,7 +358,6 @@ dev = [{ name = "pre-commit", specifier = ">=4.0.1" }]
 
 [[package]]
 name = "cpn-cli"
-version = "0.5.0"
 source = { editable = "packages/cli" }
 dependencies = [
     { name = "cpn-core", extra = ["discord", "ocr"] },
