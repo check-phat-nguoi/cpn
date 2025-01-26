@@ -305,7 +305,7 @@ name = "cpn-cli"
 version = "0.5.0"
 source = { editable = "packages/cli" }
 dependencies = [
-    { name = "cpn-core", extra = ["discord", "ocr"] },
+    { name = "cpn-core", extra = ["curl", "discord", "ocr"] },
 ]
 
 [package.dev-dependencies]
@@ -315,7 +315,7 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "cpn-core", extras = ["discord", "ocr"], editable = "packages/core" }]
+requires-dist = [{ name = "cpn-core", extras = ["discord", "ocr", "curl"], editable = "packages/core" }]
 
 [package.metadata.requires-dev]
 dev = [
@@ -403,7 +403,7 @@ version = "0.0.0"
 source = { editable = "packages/telegram-bot" }
 dependencies = [
     { name = "beanie" },
-    { name = "cpn-core", extra = ["ocr"] },
+    { name = "cpn-core", extra = ["curl", "ocr"] },
     { name = "pydantic" },
     { name = "python-dotenv" },
     { name = "python-telegram-bot" },
@@ -418,7 +418,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "beanie", specifier = ">=1.29.0" },
-    { name = "cpn-core", extras = ["ocr"], editable = "packages/core" },
+    { name = "cpn-core", extras = ["ocr", "curl"], editable = "packages/core" },
     { name = "pydantic", specifier = ">=2.10.5" },
     { name = "python-dotenv", specifier = ">=1.0.1" },
     { name = "python-telegram-bot", specifier = ">=21.10" },
