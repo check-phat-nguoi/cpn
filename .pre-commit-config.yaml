@@ -29,6 +29,6 @@ repos:
       - id: commitizen
 
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.6.0
+    rev: 0.6.1
     hooks:
       - id: uv-lock
